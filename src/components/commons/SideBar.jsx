@@ -1,7 +1,5 @@
 import React from "react";
 import { RxCross1 } from "react-icons/rx";
-import FormattedTime from "../../utils/FormattedTime";
-import Calendar from "../calendar/Calendar";
 
 const SideBar = ({ isOpen, onClose }) => {
   const time = FormattedTime();
@@ -9,7 +7,6 @@ const SideBar = ({ isOpen, onClose }) => {
   return (
     <>
       <div className="w-72 hidden md:flex h-auto flex-col bg-gray-200 p-5">
-        <Calendar />
         <ul className="space-y-4">
           <li>
             <Link to="/home">Dashboard</Link>
@@ -37,7 +34,6 @@ const SideBar = ({ isOpen, onClose }) => {
             </button>
 
             <div className="mt-4">
-              <Calendar />
             </div>
 
             <ul className="space-y-4">
