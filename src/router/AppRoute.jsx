@@ -26,9 +26,9 @@ const AppRoute = () => {
 
             <Route path="addstudent" element={<AddStudent />} />
 
-            <Route path="editstudent/:id" element={<EditStudent />} />
+            <Route path="editstudent" element={<EditStudent />} />
 
-            <Route path="deletestudent/:id" element={<DeleteStudent />} />
+            <Route path="deletestudent" element={<DeleteStudent />} />
 
             <Route path="results" element={<Reports />} />
 

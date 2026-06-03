@@ -4,13 +4,13 @@ import { IoMenu } from "react-icons/io5";
 
 const Header = ({ onMenuItemClick }) => {
   return (
-    <div className="w-full h-16 bg-[#125887] relative flex items-center px-4">
+    <div className="w-full h-16 bg-[#125887] shadow-2xl relative flex items-center px-4">
       <button className="md:hidden text-white" onClick={onMenuItemClick}>
         <IoMenu size={30} />
       </button>
 
       <div className="flex items-center mx-auto md:mx-0 md:items-start">
-        <h1 className="text-xl text-white font-serif font-semibold">
+        <h1 className="md:text-xl text-lg text-white font-serif font-semibold">
           Student-performance-prediction
         </h1>
       </div>
