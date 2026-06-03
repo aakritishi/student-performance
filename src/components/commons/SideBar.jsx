@@ -14,6 +14,7 @@ const SideBar = ({ isOpen, onClose }) => {
           <li>
             <NavLink
               to="/home"
+              end
               className={({ isActive }) =>
                 `block w-full px-3 py-4 ${
                   isActive
@@ -131,6 +132,7 @@ const SideBar = ({ isOpen, onClose }) => {
               <li onClick={onClose}>
                 <NavLink
                   to="/home"
+                  end
                   className={({ isActive }) =>
                     `block w-full px-3 py-4 ${
                       isActive
