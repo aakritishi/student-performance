@@ -1,5 +1,6 @@
 import React from "react";
 import { IoMenu } from "react-icons/io5";
+import { FaCircleUser } from "react-icons/fa6";
 // import profile from "../../assets/profile.png";
 
 const Header = ({ onMenuItemClick }) => {

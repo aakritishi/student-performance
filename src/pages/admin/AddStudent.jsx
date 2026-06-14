@@ -1,8 +1,11 @@
 import React from 'react'
+import AddStudentForm from '../../components/forms/AddStudentForm'
 
 const AddStudent = () => {
   return (
-    <div>AddStudent</div>
+    <div className='w-[94%]'>
+      <AddStudentForm/>
+    </div>
   )
 }
 

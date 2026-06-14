@@ -13,7 +13,7 @@ const MainLayout = () => {
       <div className="flex flex-1">
         <SideBar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
-        <main className="flex-1 p-4">
+        <main className="flex-1 p-4 h-[90vh] overflow-y-scroll">
           <Outlet />
         </main>
       </div>
