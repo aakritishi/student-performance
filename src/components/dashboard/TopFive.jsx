@@ -2,7 +2,8 @@ import React from 'react';
 
 const TopFive = () => {
   return (
-    <div className="w-full overflow-x-auto">
+    <div className="w-full overflow-x-auto mt-4">
+        <h1 className='text-lg my-2 font-medium'>Top 5 Students</h1>
       <table className="w-full border border-gray-300">
         <thead>
           <tr className="border-y border-gray-300">
