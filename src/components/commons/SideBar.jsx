@@ -3,6 +3,12 @@ import { RxCross1 } from "react-icons/rx";
 import { Link, NavLink } from "react-router-dom";
 import { FaAngleDown } from "react-icons/fa";
 import { FaAngleUp } from "react-icons/fa";
+import { MdDashboard } from "react-icons/md";
+import { FaUsers } from "react-icons/fa";
+import { CiStar } from "react-icons/ci";
+import { MdAnalytics } from "react-icons/md";
+import { MdOnlinePrediction } from "react-icons/md";
+import { CiSettings } from "react-icons/ci";
 
 const SideBar = ({ isOpen, onClose }) => {
   const [isStudentOpen, setIsStudentOpen] = useState(false);
@@ -16,14 +22,14 @@ const SideBar = ({ isOpen, onClose }) => {
               to="/home"
               end
               className={({ isActive }) =>
-                `block w-full px-3 py-4 ${
+                `flex gap-1 items-center w-full px-3 py-4 ${
                   isActive
                     ? "bg-[#04395e] shadow-inner text-lg rounded-l-2xl"
                     : "hover:bg-[#04395e] hover:rounded-l-2xl"
                 }`
               }
             >
-              Dashboard
+              <MdDashboard className="text-xl"/> Dashboard
             </NavLink>
           </li>
 
@@ -32,7 +38,10 @@ const SideBar = ({ isOpen, onClose }) => {
               onClick={() => setIsStudentOpen(!isStudentOpen)}
               className="flex items-center justify-between w-full px-3 py-4 hover:bg-[#04395e] hover:rounded-l-2xl"
             >
-              <span>Students</span>
+              <div className="flex items-center gap-1">
+                <FaUsers className="text-xl"/>
+                <span>Students</span>
+              </div>
               {isStudentOpen ? <FaAngleUp /> : <FaAngleDown />}
             </button>
 
@@ -56,7 +65,7 @@ const SideBar = ({ isOpen, onClose }) => {
 
                 <li>
                   <NavLink
-                    to="/home/editstudent"
+                    to="/home/editdeletestudent"
                     className={({ isActive }) =>
                       `block w-full pl-8 py-3 mb-3 ${
                         isActive
@@ -66,25 +75,10 @@ const SideBar = ({ isOpen, onClose }) => {
                     }
                     onClick={() => setIsStudentOpen(false)}
                   >
-                    Edit Student
+                    Edit/Delete Student
                   </NavLink>
                 </li>
 
-                <li>
-                  <NavLink
-                    to="/home/deletestudent"
-                    className={({ isActive }) =>
-                      `block w-full pl-8 py-3 mb-2 ${
-                        isActive
-                          ? "bg-[#04395e] rounded-l-2xl"
-                          : "hover:bg-[#04395e] hover:rounded-l-2xl"
-                      }`
-                    }
-                    onClick={() => setIsStudentOpen(false)}
-                  >
-                    Delete Student
-                  </NavLink>
-                </li>
               </ul>
             )}
           </li>
@@ -93,14 +87,14 @@ const SideBar = ({ isOpen, onClose }) => {
             <NavLink
               to="/home/results"
               className={({ isActive }) =>
-                `block w-full px-3 py-4 ${
+                `flex items-center gap-1 w-full px-3 py-4 ${
                   isActive
                     ? "bg-[#04395e] rounded-l-2xl "
                     : "hover:bg-[#04395e] hover:rounded-l-2xl"
                 }`
               }
             >
-              Results
+              <CiStar className="text-xl font-bold"/> Results
             </NavLink>
           </li>
 
@@ -108,14 +102,29 @@ const SideBar = ({ isOpen, onClose }) => {
             <NavLink
               to="/home/analytics"
               className={({ isActive }) =>
-                `block w-full px-3 py-4 ${
+                `flex items-center gap-1 w-full px-3 py-4 ${
                   isActive
                     ? "bg-[#04395e] shadow-inner text-lg rounded-l-2xl"
                     : "hover:bg-[#04395e] hover:rounded-l-2xl"
                 }`
               }
             >
-              Analytics
+              <MdAnalytics className="text-xl"/> Analytics
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink
+              to="/home/prediction"
+              className={({ isActive }) =>
+                `flex items-center gap-1 w-full px-3 py-4 ${
+                  isActive
+                    ? "bg-[#04395e] shadow-inner text-lg rounded-l-2xl"
+                    : "hover:bg-[#04395e] hover:rounded-l-2xl"
+                }`
+              }
+            >
+              <MdOnlinePrediction className="text-xl"/> Prediction
             </NavLink>
           </li>
         </ul>
@@ -134,14 +143,14 @@ const SideBar = ({ isOpen, onClose }) => {
                   to="/home"
                   end
                   className={({ isActive }) =>
-                    `block w-full px-3 py-4 ${
+                    `flex items-center gap-1 w-full px-3 py-4 ${
                       isActive
                         ? "bg-[#04395e] shadow-inner text-lg rounded-l-2xl"
                         : "hover:bg-[#04395e] hover:rounded-l-2xl"
                     }`
                   }
                 >
-                  Dashboard
+                  <MdDashboard/>Dashboard
                 </NavLink>
               </li>
 
@@ -153,7 +162,7 @@ const SideBar = ({ isOpen, onClose }) => {
                   className="w-full px-3 py-4 text-lg hover:bg-[#04395e] hover:rounded-l-2xl"
                 >
                   <div className="flex items-center gap-2">
-                    <span>Students</span>{" "}
+                    <div className="flex items-center gap-1"><FaUsers/><span>Students</span></div>
                     {isStudentOpen ? <FaAngleUp /> : <FaAngleDown />}
                   </div>
                   {isStudentOpen && (
@@ -163,7 +172,7 @@ const SideBar = ({ isOpen, onClose }) => {
                           onClick={onClose}
                           to="/home/addstudent"
                           className={({ isActive }) =>
-                            `block w-full pl-8 py-3 mb-3 ${
+                            `flex items-center gap-1 w-full pl-8 py-3 mb-3 ${
                               isActive
                                 ? "bg-[#04395e] rounded-l-2xl "
                                 : "hover:bg-[#04395e] hover:rounded-l-2xl"
@@ -176,7 +185,7 @@ const SideBar = ({ isOpen, onClose }) => {
                       <li>
                         <NavLink
                           onClick={onClose}
-                          to="/home/editstudent"
+                          to="/home/editdeletestudent"
                           className={({ isActive }) =>
                             `block w-full pl-8 py-3 mb-3 ${
                               isActive
@@ -185,22 +194,7 @@ const SideBar = ({ isOpen, onClose }) => {
                             }`
                           }
                         >
-                          Edit Student
-                        </NavLink>
-                      </li>
-                      <li>
-                        <NavLink
-                          onClick={onClose}
-                          to="/home/deletestudent"
-                          className={({ isActive }) =>
-                            `block w-full pl-8 py-3 mb-3 ${
-                              isActive
-                                ? "bg-[#04395e] rounded-l-2xl "
-                                : "hover:bg-[#04395e] hover:rounded-l-2xl"
-                            }`
-                          }
-                        >
-                          Delete Student
+                          Edit/Delete Student
                         </NavLink>
                       </li>
                     </ul>
@@ -212,14 +206,14 @@ const SideBar = ({ isOpen, onClose }) => {
                 <NavLink
                   to="/home/results"
                   className={({ isActive }) =>
-                    `block w-full px-3 py-4 ${
+                    `flex items-center gap-1 w-full px-3 py-4 ${
                       isActive
                         ? "bg-[#04395e] shadow-inner text-lg rounded-l-2xl"
                         : "hover:bg-[#04395e] hover:rounded-l-2xl"
                     }`
                   }
                 >
-                  Results
+                  <CiStar/>Results
                 </NavLink>
               </li>
 
@@ -227,14 +221,29 @@ const SideBar = ({ isOpen, onClose }) => {
                 <NavLink
                   to="/home/analytics"
                   className={({ isActive }) =>
-                    `block w-full px-3 py-4 ${
+                    `flex items-center gap-1 w-full px-3 py-4 ${
                       isActive
                         ? "bg-[#04395e] shadow-inner text-lg rounded-l-2xl"
                         : "hover:bg-[#04395e] hover:rounded-l-2xl"
                     }`
                   }
                 >
-                  Analytics
+                  <MdAnalytics/>Analytics
+                </NavLink>
+              </li>
+
+              <li onClick={onClose}>
+                <NavLink
+                  to="/home/prediction"
+                  className={({ isActive }) =>
+                    `flex items-center gap-1 w-full px-3 py-4 ${
+                      isActive
+                        ? "bg-[#04395e] shadow-inner text-lg rounded-l-2xl"
+                        : "hover:bg-[#04395e] hover:rounded-l-2xl"
+                    }`
+                  }
+                >
+                  <MdOnlinePrediction/> Prediction
                 </NavLink>
               </li>
             </ul>

@@ -4,19 +4,19 @@ import Login from "../pages/auth/Login";
 
 import Home from "../pages/admin/Home";
 import AddStudent from "../pages/admin/AddStudent";
-import EditStudent from "../pages/admin/EditStudent";
-import DeleteStudent from "../pages/admin/DeleteStudent";
 import Analytics from "../pages/admin/Analytics";
 import Reports from "../pages/admin/Reports";
 
 import MainLayout from "../layout/MainLayout";
 import ProtectedRoute from "./ProtectedRoute";
+import EditDeleteStudent from "../pages/admin/EditDeleteStudent";
+import Prediction from "../pages/admin/Prediction";
 
 const AppRoute = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login/>} />
+        <Route path="/" element={<Login />} />
 
         <Route path="/login" element={<Login />} />
 
@@ -26,17 +26,17 @@ const AppRoute = () => {
 
             <Route path="addstudent" element={<AddStudent />} />
 
-            <Route path="editstudent" element={<EditStudent />} />
-
-            <Route path="deletestudent" element={<DeleteStudent />} />
+            <Route path="editdeletestudent" element={<EditDeleteStudent />} />
 
             <Route path="results" element={<Reports />} />
 
             <Route path="analytics" element={<Analytics />} />
+
+            <Route path="prediction" element={<Prediction />} />
           </Route>
         </Route>
 
-        <Route path="*" element={<Login/>} />
+        <Route path="*" element={<Login />} />
       </Routes>
     </BrowserRouter>
   );

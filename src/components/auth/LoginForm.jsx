@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaLock } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import loginApi from "../../api/loginapi";
+import { MdAnalytics } from "react-icons/md";
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
@@ -40,9 +41,7 @@ const LoginForm = () => {
 
       navigate("/home");
     } catch (err) {
-      setError(
-        err.response?.data?.message || "Invalid email or password"
-      );
+      setError(err.response?.data?.message || "Invalid email or password");
     } finally {
       setLoading(false);
     }
@@ -51,8 +50,12 @@ const LoginForm = () => {
   return (
     <div className="max-w-md mx-auto mt-10 p-6 border-none rounded shadow-lg">
       <form onSubmit={handleSubmit}>
-        <h1 className="text-xl font-medium text-center md:text-2xl">
-          Login Form
+        <div className="w-full flex justify-center items-center">
+          <MdAnalytics className=" text-[#125887] size-9" />
+        </div>
+        <h1 className="text-[#125887] text-xl font-medium text-center md:text-2xl mb-1">StuPredict</h1>
+        <h1 className="text-md text-center mb-3">
+          Asain College of Higher Studies
         </h1>
         <Label text="Email" htmlFor="email" />
         <div className="relative w-full">
@@ -80,10 +83,10 @@ const LoginForm = () => {
 
         {error && <p className="text-red-500 mb-4 text-center">{error}</p>}
 
-        <div className="flex justify-center items-center my-3">
+        {/* <div className="flex justify-center items-center my-3 w-full">
           <Button type="submit">Login</Button>
-        </div>
-
+        </div> */}
+        <button className="text-center px-2 py-3 w-full text-lg hover:font-semibold bg-[#125887] hover:bg-[#04395E] rounded my-3 text-white">Login</button>
       </form>
     </div>
   );

@@ -1,7 +1,8 @@
 import React from "react";
 import { IoMenu } from "react-icons/io5";
 import { FaCircleUser } from "react-icons/fa6";
-// import profile from "../../assets/profile.png";
+import { FaUserGraduate } from "react-icons/fa";
+import profile from "../../assets/profile.jpg";
 
 const Header = ({ onMenuItemClick }) => {
   return (
@@ -11,12 +12,12 @@ const Header = ({ onMenuItemClick }) => {
       </button>
 
       <div className="flex items-center mx-auto md:mx-0 md:items-start">
-        <h1 className="md:text-xl text-lg text-white font-serif font-semibold">
-          Student-performance-prediction
+        <h1 className="md:text-lg text-lg text-white font-serif font-semibold flex gap-2 items-center">
+          <FaUserGraduate className="text-2xl text-white"/> <span>StuPredict</span>
         </h1>
       </div>
 
-      {/* <img src={profile} alt="profile" className="h-12 w-12 absolute top-8 right-4" /> */}
+      <img src={profile} alt="profile" className="h-12 w-12 absolute rounded-full top-2 right-4" />
     </div>
   );
 };

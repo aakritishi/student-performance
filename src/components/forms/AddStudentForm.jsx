@@ -3,6 +3,7 @@ import Button from "../ui/Button";
 import Input from "../ui/Input";
 import Label from "../ui/Label";
 import studentPostApi from "../../api/studentpostapi";
+import { toast } from "react-toastify";
 
 const AddStudentForm = () => {
   const [formData, setFormData] = useState({
@@ -59,8 +60,22 @@ const AddStudentForm = () => {
 
     try {
       const data = await studentPostApi(formData);
+      toast.success("Student added successfully!");
+      setFormData({
+        name: "",
+        rollNumber: "",
+        className: "",
+        semester: "",
+        faculty: "",
+        age: "",
+        gender: "",
+        attendance: "",
+        subjects: [],
+        facultyRemarks: "",
+      });
     } catch (err) {
       setError(err.response?.data?.message || "Failed");
+      toast.error("Failed to add student.");
     }
   };
 
@@ -70,6 +85,7 @@ const AddStudentForm = () => {
         <h1 className="md:text-left text-center font-medium text-lg md:text-xl mb-2">
           Add Student Form
         </h1>
+        {error && <p className="text-red-500 mb-4 text-center">{error}</p>}
         <Label text="Student Name" htmlFor="name" />
 
         <Input
