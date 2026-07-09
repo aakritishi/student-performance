@@ -9,21 +9,25 @@ import {
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const PieChart = () => {
-  const passedStudents = 85;
-  const failedStudents = 15;
+const FeaturesChart = () => {
+  const assignment = 30;
+  const attendance = 20;
+  const examresult= 40;
+  const behavior = 10;
 
-  const totalStudents = passedStudents + failedStudents;
+  const total = assignment + attendance + examresult + behavior;
 
   const data = {
-    labels: ["Passed", "Failed"],
+    labels: ["assignment", "attendance", "examresult", "behavior"],
     datasets: [
       {
-        label: "Students",
-        data: [passedStudents, failedStudents],
+        label: "Features",
+        data: [assignment, attendance, examresult, behavior],
         backgroundColor: [
           "#279AF1", 
           "#ED6A5A", 
+          "#90BEDE",
+          "#F39B6D"
         ],
         borderColor: "#ffffff",
         borderWidth: 2,
@@ -47,9 +51,9 @@ const PieChart = () => {
         callbacks: {
           label: function (context) {
             const value = context.raw;
-            const percentage = ((value / totalStudents) * 100).toFixed(1);
+            const percentage = ((value / total) * 100).toFixed(1);
 
-            return `${context.label}: ${value} Students (${percentage}%)`;
+            return `${context.label}: ${value} features (${percentage}%)`;
           },
         },
       },
@@ -59,7 +63,7 @@ const PieChart = () => {
   return (
     <div className="w-full max-w-md bg-white rounded-xl shadow-lg mt-6">
       <h2 className="text-lg font-medium mb-5 text-center">
-        Student Result Analysis
+        Features Affecting Result
       </h2>
 
       <Pie data={data} options={options} />
@@ -68,4 +72,4 @@ const PieChart = () => {
   );
 };
 
-export default PieChart;
+export default FeaturesChart;
