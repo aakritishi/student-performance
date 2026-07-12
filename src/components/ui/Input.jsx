@@ -9,7 +9,7 @@ const Input = ({ type, name, value, onChange, placeholder }) => {
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        className="pl-8 py-3 rounded border border-gray-400 w-full mb-3 focus"
+        className="pl-3 py-3 rounded border border-gray-400 w-full mb-3 focus"
       />
     </div>
   );
