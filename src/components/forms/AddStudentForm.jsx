@@ -134,13 +134,13 @@ const AddStudentForm = () => {
 
         <h2 className="text-lg font-medium mt-6 mb-3">Previous Semester</h2>
         <Label text="Previous Semester Number" htmlFor="prevSemester" />
-        <Input required type="number" name="semester" value={formData.previousSemester.semester} onChange={(e) => handleNestedChange("previousSemester", e)} placeholder="e.g. 4" />
+        <Input required type="number" name="semester" value={formData.previousSemester.semester} onChange={(e) => handleNestedChange("previousSemester", e)} placeholder="enter previous sem number" />
 
         <Label text="GPA" htmlFor="gpa" />
-        <Input required type="number" step="0.01" name="gpa" value={formData.previousSemester.gpa} onChange={(e) => handleNestedChange("previousSemester", e)} placeholder="e.g. 1.8" />
+        <Input required type="number" step="0.01" name="gpa" value={formData.previousSemester.gpa} onChange={(e) => handleNestedChange("previousSemester", e)} placeholder="enter gpa" />
 
         <Label text="Percentage" htmlFor="percentage" />
-        <Input required type="number" name="percentage" value={formData.previousSemester.percentage} onChange={(e) => handleNestedChange("previousSemester", e)} placeholder="e.g. 45" />
+        <Input required type="number" name="percentage" value={formData.previousSemester.percentage} onChange={(e) => handleNestedChange("previousSemester", e)} placeholder="enter percentage" />
 
         <Label text="Performance" htmlFor="performance" />
         <select required name="performance" value={formData.previousSemester.performance} onChange={(e) => handleNestedChange("previousSemester", e)} className="w-full border border-gray-300 rounded-md p-3 mb-3 mt-1">

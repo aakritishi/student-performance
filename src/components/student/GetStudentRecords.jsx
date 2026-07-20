@@ -4,7 +4,7 @@ import { MdDelete } from "react-icons/md";
 import studentGetApi from "../../api/studentgetapi";
 import { toast } from "react-toastify";
 
-const EditDeleteStudent = () => {
+const GetStudentRecords = () => {
   const [students, setStudents] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -33,7 +33,7 @@ const EditDeleteStudent = () => {
     <div className="w-full overflow-x-auto overflow-y-auto min-h-full mt-4">
       <h1 className="text-lg my-2 font-medium">Student Details</h1>
 
-      <table className="w-full border border-gray-300">
+      <table className="w-full border border-gray-300 text-center">
         <thead>
           <tr className="border-y border-gray-300">
             <th className="px-4 py-3">ID</th>
@@ -98,4 +98,4 @@ const EditDeleteStudent = () => {
   );
 };
 
-export default EditDeleteStudent;
+export default GetStudentRecords;

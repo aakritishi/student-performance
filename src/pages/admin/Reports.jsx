@@ -1,8 +1,11 @@
 import React from 'react'
+import ReportTopSection from '../../components/reports/ReportTopSection'
 
 const Reports = () => {
   return (
-    <div>Reports</div>
+    <div className='w-full'>
+      <ReportTopSection/>
+    </div>
   )
 }
 
