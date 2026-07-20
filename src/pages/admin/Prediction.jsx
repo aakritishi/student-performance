@@ -1,8 +1,11 @@
 import React from 'react'
+import PredictionTab from '../../components/prediction/PredictionTab'
 
 const Prediction = () => {
   return (
-    <div>Prediction</div>
+    <div>
+      <PredictionTab/>
+    </div>
   )
 }
 
