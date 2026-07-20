@@ -102,6 +102,22 @@ const ReportTopSection = () => {
                     {student.currentPerformance.riskLevel}
                   </span>
                 </h1>
+
+                <h1 className="text-gray-600">
+                  Total Attendance:
+                  <br />
+                  <span className="text-[#125887] font-medium text-lg">
+                    {student.currentPerformance.attendance}
+                  </span>
+                </h1>
+
+                <h1 className="text-gray-600">
+                  Behaviour:
+                  <br />
+                  <span className="text-[#125887] font-medium text-lg">
+                    {student.currentPerformance.behavior}
+                  </span>
+                </h1>
               </div>
             </div>
             <div className="border border-gray-300 w-full shadow-md bg-white rounded p-6">
