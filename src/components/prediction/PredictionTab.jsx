@@ -124,12 +124,18 @@ const PredictionTab = () => {
               <h1 className="text-center text-md font-semibold text-[#125887]">
                 Predicted Result
               </h1>
-              <h1 className="text-center text-md font-semibold text-[#125887]">
+              <h1 className="text-md font-semibold text-[#125887] mt-4">
                 Predicted Decision: {student.finalDecision.status}
               </h1>
-              <p className="text-lg text-gray-900">message: {student.finalDecision.message}</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-4">
+              <p className="text-justify text-gray-900 mt-8"><span className="text-[#125887] font-semibold">Message:</span> {student.finalDecision.message}</p>
+              <div>
+                <h1 className="text-[#125887] font-semibold text-lg mb-3 text-center">Confidence</h1>
+                <h1 className="w-24 mx-auto text-center p-8 rounded-full bg-[#125887] text-white font-bold">{student.futurePrediction.confidence}</h1>
+              </div>
+              </div>
             </div>
-          </div>
+          </div> 
         </>
       )}
     </div>
